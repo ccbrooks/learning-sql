@@ -678,4 +678,26 @@ VALUES (&quot;Blue Steele&quot;, 5);
 
 --in Workbench
 INSERT INTO cats(name, age)
-VALUES &quot;Jenkins&quot;, 7);</code></pre></div></figure></div></article></body></html>
+VALUES &quot;Jenkins&quot;, 7);</code></pre></div></figure><h1 id="c58ff1c7-fa18-4795-a466-3dcfb1496ad7" class="">Multi-insert</h1><h2 id="0a5e4c1f-2d36-46d6-a11a-5131e619661b" class="">Section 4, Video 39</h2><p id="8593cb48-2dfe-42d4-a939-1522f7d2b9d3" class="">We can choose the order of our columns when inserting, but then when adding values, the columns need to be written in the correct order!</p><pre id="8ce0761a-56c6-4484-8a08-87a5c60b2a8b" class="code"><code>--order doesn&#x27;t matter as long as the correct info is going into the right columns
+INSERT INTO cats(age, name)
+VALUES(2, &quot;Beth&quot;);
+
+SELECT * FROM cats;
+
+--bad example
+INSERT INTO cats(name, age)
+VALUES(8, &quot;Linus&quot;);
+--ERROR 1366 (HY000): Incorrect integer value: &#x27;Linus&#x27; for column &#x27;age&#x27; at row 1
+--error prevents row from being created</code></pre><p id="e94563be-2c0a-47cc-beab-094f400b755c" class="">
+</p><pre id="ef95a5b8-49b3-4617-8a21-110d9f9f5980" class="code"><code>--multiple insert
+--example, unused
+INSERT INTO cats(name, age)
+VALUES (&#x27;Charlie&#x27;, 10),
+			 (&#x27;Sadie&#x27;, 3),
+			 (&#x27;Lazy Bear&#x27;, 1);
+--Workbench
+INSERT INTO cats(name, age)
+VALUES (&quot;Meatball&quot;, 5),
+	     (&quot;Turkey&quot;, 1),
+       (&quot;Potato face&quot;, 15);</code></pre><p id="f14ed5f4-240f-4c1f-92ef-4d6e9975981e" class="">
+</p></div></article></body></html>
