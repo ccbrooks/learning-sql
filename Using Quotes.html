@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Using Insert</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Using Quotes</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -666,38 +666,9 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="3e1d0537-54cb-4ca4-a152-b03413fb6bbf" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/solid_beige.png" style="object-position:center 40%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/code_purple.svg"/></div><h1 class="page-title">Using Insert</h1></header><div class="page-body"><h2 id="b93595a9-915a-4d3d-a0e8-596f3a4a6e73" class="">Section 4, Video 35</h2><p id="5512bb63-727a-4915-af88-81d578de7f55" class=""><a href="https://webdev.slides.com/coltsteele/getting-started-with-mysql/fullscreen#/43">MySQL 2.0: Getting Started with MySQL (slides.com)</a></p><p id="fd760413-abe1-469e-ba97-c875d742b1da" class="">
-</p><pre id="057aecbb-270b-41da-83dc-3a874883d311" class="code"><code>--inserting data into a table
-INSERT INTO cats(name, age)
-VALUES (&#x27;Jetson&#x27;, 7);</code></pre><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="5eaa40ec-917a-4e46-82fc-14a542932624"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Ex. Inserting data into the Cats table!<pre id="020efba0-f1ed-4be9-a528-30addb2d870c" class="code"><code>USE pet_shop;
-CREATE TABLE cats(name VARCHAR(50), age INT);
-
---in Command Line Client
-INSERT INTO cats(name, age)
-VALUES (&#x27;Blue Steele&#x27;, 5);
-
---in Workbench
-INSERT INTO cats(name, age)
-VALUES &#x27;Jenkins&#x27;, 7);</code></pre></div></figure><h1 id="c58ff1c7-fa18-4795-a466-3dcfb1496ad7" class="">Multi-insert</h1><h2 id="0a5e4c1f-2d36-46d6-a11a-5131e619661b" class="">Section 4, Video 39</h2><p id="8593cb48-2dfe-42d4-a939-1522f7d2b9d3" class="">We can choose the order of our columns when inserting, but then when adding values, the columns need to be written in the correct order!</p><pre id="8ce0761a-56c6-4484-8a08-87a5c60b2a8b" class="code"><code>--order doesn&#x27;t matter as long as the correct info is going into the right columns
-INSERT INTO cats(age, name)
-VALUES(2, &#x27;Beth&#x27;);
-
-SELECT * FROM cats;
-
---bad example
-INSERT INTO cats(name, age)
-VALUES(8, &#x27;Linus&#x27;);
---ERROR 1366 (HY000): Incorrect integer value: &#x27;Linus&#x27; for column &#x27;age&#x27; at row 1
---error prevents row from being created</code></pre><p id="e94563be-2c0a-47cc-beab-094f400b755c" class="">
-</p><pre id="ef95a5b8-49b3-4617-8a21-110d9f9f5980" class="code"><code>--multiple insert
---example, unused
-INSERT INTO cats(name, age)
-VALUES (&#x27;Charlie&#x27;, 10),
-		   (&#x27;Sadie&#x27;, 3),
-		   (&#x27;Lazy Bear&#x27;, 1);
---Workbench
-INSERT INTO cats(name, age)
-VALUES (&#x27;Meatball&#x27;, 5),
-	     (&#x27;Turkey&#x27;, 1),
-       (&#x27;Potato face&#x27;, 15);</code></pre><p id="f14ed5f4-240f-4c1f-92ef-4d6e9975981e" class="">
-</p></div></article></body></html>
+</style></head><body><article id="19ec6b21-f6a2-4509-8721-fb94a69ff56b" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/chat_blue.svg"/></div><h1 class="page-title">Using Quotes</h1></header><div class="page-body"><h2 id="445aa848-b8ca-40a1-a574-22e2b986d0b8" class="">Section 4, Video 45</h2><p id="f3590acc-f255-45e0-9815-c75303e4a100" class="">Technically in MySQL, you can use “ “ or ‘ ‘, but in general practice because of some other SQL relational databases, you do not want to use “ “!</p><p id="7ab542df-db42-488f-8f50-d11c33de0323" class="">*<em>Updated Using Insert file because it used double quotes!</em></p><p id="20d0b7d6-e9e4-4954-a976-e528be133134" class="">
+</p><p id="dc27b7ed-6218-4713-9c90-b5b1d88e9eee" class="">When we have apostrophes in strings, </p><pre id="7727a227-fb38-4eee-9f2e-fdbdc4c891d5" class="code"><code>--this will open/close the quotes and end in an open quote
+INSERT INTO cats(name)
+VALUES (&#x27;mario&#x27;s pizza&#x27;);
+-- MySQL will show &quot;&#x27;&gt;&quot; per line since &#x27; is not closed</code></pre><p id="1cd707ae-23fd-4e5e-9c6c-d495cd72f61b" class="">We can escape an apostrophe by putting a “\” before it</p><pre id="c3ff9eef-d288-40a6-8303-9bec8d35a7f2" class="code"><code>INSERT INTO cats(name)
+VALUES (&#x27;mario\&#x27;s pizza&#x27;);</code></pre><p id="ec9df188-7949-4fc1-80e8-188363220e2d" class="">Same can be done with double quotes, but not worth using because we should use single quotes in MySQL</p></div></article></body></html>
