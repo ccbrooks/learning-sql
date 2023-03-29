@@ -1,5 +1,5 @@
 -- general use
-SELECT REPLACE ('<string>', '<what_to_replace>', '<replace_with>');
+-- SELECT REPLACE ('<string>', '<what_to_replace>', '<replace_with>');
 SELECT REPLACE ('Hello World', 'Hell', '%$#@');
 -- prints '%$#@o World'
 
