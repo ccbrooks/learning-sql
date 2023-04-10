@@ -674,14 +674,14 @@ SELECT INSERT (&#x27;Hello Bobby&#x27;, 6, 4, &#x27;There&#x27;);</code></pre><h
 SELECT LEFT (&#x27;omhgagalol!&#x27;, 3);</code></pre></div><div id="a3419149-7e55-4992-a7ae-aa6586debd65" style="width:50%" class="column"><h3 id="f0f1eef5-bc1c-4beb-8651-e923c9f0df69" class="">Right</h3><figure id="1f304386-9ef1-4fcc-9df7-122f6352a4fd" class="image"><a href="Other%20String%20Functions%20af7bb1ad771447729c11a895a674d1dc/Untitled%202.png"><img style="width:629px" src="Other%20String%20Functions%20af7bb1ad771447729c11a895a674d1dc/Untitled%202.png"/></a></figure><pre id="9102e424-cd27-4f18-bc7e-6c2d8a990eeb" class="code"><code>-- gets 4 rightmost characters
 -- prints &#x27;lol!&#x27;
 SELECT RIGHT (&#x27;omghahalol!&#x27;, 4);</code></pre></div></div><pre id="6af579e7-6e25-4d70-ab3c-07356a7c8a67" class="code"><code>SELECT LEFT (author_lname, 1) FROM books;
---prints first character of each last name</code></pre><h3 id="835ab6ad-fde2-4405-9ea7-7d2739d0f970" class="">Repeat</h3><figure id="6f5b02be-6e1f-4757-9a54-f1d1fce97114" class="image"><a href="Other%20String%20Functions%20af7bb1ad771447729c11a895a674d1dc/Untitled%203.png"><img style="width:643px" src="Other%20String%20Functions%20af7bb1ad771447729c11a895a674d1dc/Untitled%203.png"/></a></figure><pre id="32e11ed7-3932-44e9-ba6f-cd399c06b79c" class="code"><code>-- repeats string 4 times
+-- prints first character of each last name</code></pre><h3 id="835ab6ad-fde2-4405-9ea7-7d2739d0f970" class="">Repeat</h3><figure id="6f5b02be-6e1f-4757-9a54-f1d1fce97114" class="image"><a href="Other%20String%20Functions%20af7bb1ad771447729c11a895a674d1dc/Untitled%203.png"><img style="width:643px" src="Other%20String%20Functions%20af7bb1ad771447729c11a895a674d1dc/Untitled%203.png"/></a></figure><pre id="32e11ed7-3932-44e9-ba6f-cd399c06b79c" class="code"><code>-- repeats string 4 times
 -- prints &#x27;hahahaha&#x27;
 SELECT REPEAT (&#x27;ha&#x27;, 4);</code></pre><h3 id="749226aa-d3b8-4ca4-b79f-52f8f19a6e0e" class="">Trim</h3><figure id="5776500d-ffc3-405d-8a24-30363d88d0af" class="image"><a href="Other%20String%20Functions%20af7bb1ad771447729c11a895a674d1dc/Untitled%204.png"><img style="width:652px" src="Other%20String%20Functions%20af7bb1ad771447729c11a895a674d1dc/Untitled%204.png"/></a></figure><pre id="ce2d302b-4938-4201-9c94-2d0fd2d741e8" class="code"><code>-- trims leading and trailing spaces
 -- prints &#x27;boston&#x27;
 SELECT TRIM (&#x27;      boston &#x27;);
 
 -- does NOT trim spaces between words
---returns &#x27;san antonio&#x27;
+-- returns &#x27;san antonio&#x27;
 SELECT TRIM (&#x27;     san antonio   &#x27;);
 
 -- removes leading &#x27;.&#x27;
@@ -689,10 +689,9 @@ SELECT TRIM (&#x27;     san antonio   &#x27;);
 SELECT TRIM (LEADING &#x27;.&#x27; FROM &#x27;......san antonio..&#x27;);
 
 -- removes trailing &#x27;.&#x27;
---prints &#x27;......san antonio&#x27;
+-- prints &#x27;......san antonio&#x27;
 SELECT TRIM (TRAILING &#x27;.&#x27; FROM &#x27;......san antonio..&#x27;);
 
---removes leading and trailing &#x27;.&#x27;
+-- removes leading and trailing &#x27;.&#x27;
 -- prints &#x27;san antonio&#x27;
-SELECT TRIM (BOTH &#x27;.&#x27; FROM &#x27;......san antonio..&#x27;);</code></pre><p id="d450923a-707a-4cfb-beea-a2e6b0391aea" class="">
-</p></div></article></body></html>
+SELECT TRIM (BOTH &#x27;.&#x27; FROM &#x27;......san antonio..&#x27;);</code></pre><p id="d450923a-707a-4cfb-beea-a2e6b0391aea" class="">TRIM DOESN’T WORK ON MY VERSION (with leading, trailing, and both)</p></div></article></body></html>
